@@ -1,19 +1,14 @@
-horas = input().split()
-hi, mi, hf, mf = horas
-hi = int(hi)
-mi = int(mi)
-hf = int(hf)
-mf = int(mf)
-if hi>hf:
-    dh = (24-hi)+hf
-elif hi==hf:
-    dh = 24
-    if mi == mf:
-        dm = 0
-else:
-    dh = hf - hi
-if mi>mf:
-    dm = (60-mi)+mf
-else:
-    dm = mf-mi
-print(f"O JOGO DUROU {dh} HORA(S) e {dm} MINUTO(S)")
+h1, m1, h2, m2 = map(int, input().split())
+
+inicio = h1 * 60 + m1
+fim = h2 * 60 + m2
+
+if fim <= inicio:
+    fim += 24 * 60
+
+duracao = fim - inicio
+
+horas = duracao // 60
+minutos = duracao % 60
+
+print(f"O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)")
