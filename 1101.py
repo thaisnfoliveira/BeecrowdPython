@@ -11,4 +11,4 @@ while True:
         soma += i
     
     result = " ".join(lista)+" Sum="+soma
-    print(result)
+    print( " ".join(lista))
